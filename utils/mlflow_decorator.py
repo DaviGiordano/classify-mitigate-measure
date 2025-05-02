@@ -4,8 +4,7 @@ import mlflow
 
 
 def log_dict_output(func):
-    """Decorator: log a dict return-value to the active MLflow run
-    (numeric values → metrics, everything else → params)."""
+    """Decorator: log a dict return-value to the active MLflow run."""
 
     @functools.wraps(func)
     def wrapper(*args, **kwargs):

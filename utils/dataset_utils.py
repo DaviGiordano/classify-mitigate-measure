@@ -11,6 +11,7 @@ def load_adult(
     random_state: int | None = 42,
 ) -> DatasetWrapper:
     """Load and split the Adult dataset, wrapped in a Dataset dataclass."""
+
     SENSITIVE_NAME = "sex"
     TARGET_NAME = "income"
 
@@ -51,14 +52,7 @@ def save_dataset(
     column_transformer: ColumnTransformer,
     base_path: str = "data",
 ):
-    """
-    Save dataset in both raw and processed forms.
-
-    Args:
-        dataset: DatasetWrapper containing X_train, X_test, y_train, y_test
-        column_transformer: ColumnTransformer for data preprocessing
-        base_path: Base directory for saving data
-    """
+    """Save dataset in both raw and processed forms."""
 
     def _save_set_datasets(X_train, X_test, y_train, y_test, target_dir):
         X_train.to_csv(
