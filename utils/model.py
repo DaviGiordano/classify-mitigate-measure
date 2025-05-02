@@ -62,7 +62,6 @@ class Model:
                 estimator__constraint_group=np.ravel(sensitive_train_encoded),
             )
         else:
-
             self.pipeline.fit(
                 self.dataset.X_train,
                 self.dataset.y_train,
@@ -138,19 +137,3 @@ class Model:
             metric_frame.by_group.to_dict(orient="index"),
             reducer="dot",
         )
-
-    # def plot_metrics(self):
-    #     plotter = Plotter()
-    #     plotter.confusion_plot(self.dataset.y_test, self.y_test_pred, "./")
-    #     plotter.subgroup_metrics_plots(
-    #         self.dataset.y_test,
-    #         self.y_test_pred,
-    #         self.dataset.sensitive_test,
-    #         "./subgroup_metrics.png",
-    #     )
-    #     plotter.overalll_metrics_plots(
-    #         self.dataset.y_test,
-    #         self.y_test_pred,
-    #         self.dataset.sensitive_test,
-    #         "./overalll_metrics.png",
-    #     )
