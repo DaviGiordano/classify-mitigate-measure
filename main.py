@@ -1,18 +1,18 @@
-from typing import List, Dict
-from pathlib import Path
-from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from utils.dataset_utils import load_adult, save_dataset
+from sklearn.linear_model import LogisticRegression
+from sklearn.compose import ColumnTransformer
+from fairgbm import FairGBMClassifier
+from utils.model import Model
+from typing import List
+
 from sklearn.ensemble import (
     RandomForestClassifier,
     HistGradientBoostingClassifier,
     GradientBoostingClassifier,
 )
-from sklearn.linear_model import LogisticRegression
 import mlflow
 
-from utils.dataset_utils import load_adult, save_dataset
-from utils.model import Model
-from fairgbm import FairGBMClassifier
 
 EXPERIMENT_NAME = "compare_models"
 
