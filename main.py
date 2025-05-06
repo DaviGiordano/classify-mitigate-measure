@@ -1,9 +1,9 @@
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from utils.dataset_utils import load_adult, save_dataset
+from src.dataset_utils import load_adult, save_dataset
 from sklearn.linear_model import LogisticRegression
 from sklearn.compose import ColumnTransformer
 from fairgbm import FairGBMClassifier
-from utils.model import Model
+from src.model import Model
 from typing import List
 
 from sklearn.ensemble import (
